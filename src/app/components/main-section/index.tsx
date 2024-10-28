@@ -1,35 +1,39 @@
 /** @jsxImportSource @emotion/react */
 "use client"
 import React from 'react'
-import './styles.css';
-import {headerStyles} from './styles';
+// import './styles.css';
+import {headerStyles,para,imageStyle} from './styles';
 import ContactDetails from '../contact';
+import Image from 'next/image';
 
 
 export default function MainSection() {
   return (
     <div className="container mx-auto py-20">
-    <div className="grid grid-cols-2 gap-4">
+    {/* <div className="grid grid-cols-2 gap-4"> */}
       <div className='grid grid-cols-1 justify-center items-center text-center'>
-        <h1 css={headerStyles}>Srushti Raybhoge</h1>
-        <h3>Software Development Engineer</h3>
-        <h5>Fullstack | Frontend | Backend</h5>
-        <p className='wide-paragraph'>
-          Working on Javascript and Typescript based frameworks and libraries like React, NextJs, NodeJs, NestJs, React Native etc.
-          Avid reader, versatile learner, supportive mentor and gentle leader.
+        <h1 className='text-5xl font-bold' css={headerStyles}>Srushti Raybhoge</h1>
+        <h3 className='text-3xl font-semibold'  css={headerStyles}>Software Development Engineer</h3>
+        <h5 className='text-2xl'  css={headerStyles}>Public speaker and contributor | Linkedin Top Voice</h5>
+        <h5 className='text-2xl'  css={headerStyles}>Fullstack | Frontend | Backend</h5>
+        <h5 className='text-2xl'  css={headerStyles}>Javascript | Typescript </h5>
+        <p css={para} className='text-lg'>
+          
         </p>
         <ContactDetails/>
       </div>
-      <div className='grid grid-cols-1 justify-center items-center text-center'>
-      {/* <Image
-      src="public/images/photos/my.jpg"
-      width={500}
-      height={500}
-      alt="Picture of the author"
-    /> */}
+      {/* <div className='grid grid-cols-1 justify-center items-center text-center'>
+        <Image
+        src="/images/photos/my-photo.png"
+        width={250}
+        height={250}
+        alt="Picture of the author"
+        className='grid grid-cols-1 justify-center items-center text-center'
+        css={imageStyle}
+      />
+      </div> */}
       </div>
-      </div>
-     </div>
+    //  </div>
      
   )
 }

@@ -1,28 +1,34 @@
+import { title } from "process";
 import { images } from "../components/images";
 
 export const contactDetails=[{
     title:'linkedin',
-    url:'https://www.linkedin.com/in/srush-ray/',
+    url:'https://www.linkedin.com/in/srushti-raybhoge/',
     icon:images.linkedin,
 },
 {
     title:'email',
-    url:'mailto:srushti.raybhoge1999@gmail.com',
+    url:'mailto:srushti.sraybhoge@gmail.com',
     icon:images.mail,
 },
 {
     title:'resume',
-    url:'https://drive.google.com/file/d/1I7pEqRlaPXsrhozo5burKJWLx1VvG7Cx/view?usp=sharing',
+    url:"https://drive.google.com/file/d/1Rtfjf3zKySdb8jm4_r09uV3xBpr4G4DH/view?usp=drive_link",
     icon:images.resume,
 },
 {
-    title:'call',
-    url:"tel:+919130297838",
-    icon:images.call,
+    title: 'top-mate',
+    url:'https://topmate.io/srushti_raybhoge',
+    icon: images.call
 },
+// {
+//     title:'call',
+//     url:"tel:+919130297838",
+//     icon:images.call,
+// },
 {
     title:'medium',
-    url:'https://srush-raybhoge.medium.com/',
+    url:'https://srushti-raybhoge.medium.com/',
     icon:images.medium,
 },
 {

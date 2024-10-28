@@ -2,6 +2,9 @@ import Image from "next/image";
 import Header from "./components/header";
 import MainSection from "./components/main-section";
 import Experience from "./components/experience";
+import Tech from "./components/tech";
+import Academics from "./components/academics";
+import BitsBites from "./components/bitbites";
 
 export default function Home() {
   return (
@@ -14,6 +17,15 @@ export default function Home() {
       </div>
       <div>
       <Experience/>
+      </div>
+      <div>
+      <Tech/>
+      </div>
+      {/* <div>
+      <Academics/>
+      </div> */}
+      <div>
+      <BitsBites/>
       </div>
     </div>
   );

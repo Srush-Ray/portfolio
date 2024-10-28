@@ -1,18 +1,17 @@
-import React from 'react'
-import './styles.css';
-
+/** @jsxImportSource @emotion/react */
+"use client"
+import {links} from './styles.js';
 export default function Header() {
   return (
     <div className="container">
     <div className="grid grid-cols-2 gap-4">
-      <div className="grid grid-cols-1 p-4">SR</div>
-      <div className="grid grid-cols-6">
-        <a className="header-links grid-cols-2">@Me</a>
-        <a className="header-links grid-cols-2">Experience</a>
-        <a className="header-links grid-cols-2">Accolades</a>
-        <a className="header-links grid-cols-2">Skills</a>
-        <a className="header-links grid-cols-2">Education</a>
-        <a className="header-links grid-cols-2">Also Me</a>
+      <div className="grid grid-cols-1 p-4"></div>
+      <div className="grid grid-cols-5">
+        <a css={links} className="grid-cols-2">@Me</a>
+        <a css={links} className="grid-cols-2">Experience</a>
+        <a css={links} className="grid-cols-2">TechStacks</a>
+        {/* <a css={links} className="grid-cols-2">Academics</a> */}
+        <a css={links} className="grid-cols-2">BitsNBites</a>
       </div>
     </div>
   </div>
