@@ -4,6 +4,7 @@ import medium from '../../../public/images/contact-icons/medium.svg'
 import resume from '../../../public/images/contact-icons/resume.png'
 import mail from '../../../public/images/contact-icons/mail.png'
 import call from '../../../public/images/contact-icons/call.png'
+import mic from '../../../public/images/contact-icons/mic.png'
 import insta from '../../../public/images/contact-icons/insta.png'
 import react from '../../../public/images/techstack/react.png'
 import javascript from '../../../public/images/techstack/javascript.png'
@@ -25,5 +26,6 @@ export const images={
     typescript,
     angular,
     java,
-    node
+    node,
+    mic
 }

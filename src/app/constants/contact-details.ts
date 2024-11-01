@@ -37,6 +37,11 @@ export const contactDetails=[{
     icon:images.github,
 },
 // {
+//     title:'sessionize',
+//     url:'https://sessionize.com/srushti-raybhoge',
+//     icon:images.mic,
+// },
+// {
 //     title:'instagram',
 //     url:'https://www.instagram.com/srush_raybhoge',
 //     icon:images.insta,
