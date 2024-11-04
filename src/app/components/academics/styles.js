@@ -1,13 +1,11 @@
 import { css } from "@emotion/react";
 
-export const links=css`
- cursor:pointer;
-text-align:right;
-font-size:18px;
- &:hover {
-        text-decoration: underline;
-  }
+export const eachSection=css`
+border: 1px solid #c5bec5;
+border-radius: 10px;
+padding: 10px;
 `
+
 
 // @layer components
 // {

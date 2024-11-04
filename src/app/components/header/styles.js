@@ -8,13 +8,14 @@ font-size:18px;
         text-decoration: underline;
   }
 `
+export const stickyHeader=css`
+position: sticky;
+z-index: 100000;
+top: 0;
+box-shadow: 10px 10px 20px 10px rgb(1 1 1 / 0.9);
+`
 
-// @layer components
-// {
-//   .header-links {
-//     @apply cursor-pointer text-right
-//   }
-//   .header-links:hover {
-//     @apply underline
-//   }
-// }
+export const header=css`
+background-color: #716d70;
+color: black;
+`

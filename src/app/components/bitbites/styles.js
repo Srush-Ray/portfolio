@@ -1,20 +1,9 @@
 import { css } from "@emotion/react";
 
-export const links=css`
- cursor:pointer;
-text-align:right;
-font-size:18px;
- &:hover {
-        text-decoration: underline;
-  }
+export const sectionBox=css`
+ border: 1px solid #c5bec5;
+ margin:10px;
+ border-radius:10px;
+ padding:5px;
+ width: fit-content;
 `
-
-// @layer components
-// {
-//   .header-links {
-//     @apply cursor-pointer text-right
-//   }
-//   .header-links:hover {
-//     @apply underline
-//   }
-// }

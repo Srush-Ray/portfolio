@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 export default function Tech() {
   return (
-    <div>
-        <h2 className='section-header text-3xl font-semibold'>Tech Stack</h2>
+    <div className='mb-5'>
+        <h2 className='section-header text-3xl font-semibold'>Tech</h2>
         <div className='container'>
-        <div className='grid grid-cols-1 mt-5 justify-center items-center text-center'>
+        <div className='grid grid-cols-1 justify-center items-center text-center'>
          <div className="grid grid-cols-6">
          {
           techStack?.map((item)=>{
@@ -20,7 +20,7 @@ export default function Tech() {
                alt={item.tech}
                width={50}
                height={50}
-               className='inline-block items-center justify-center align-middle'
+               className='inline-block items-center mb-4 mt-2 justify-center align-middle'
                />
                 <p className='justify-center items-center'>{item.tech}</p>
               </div>

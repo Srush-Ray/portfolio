@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import {selectedTab,notSelectedTab,eachTab,mainContainer} from './styles.js'
-import ExperienceCards from './cards';
+import ExperienceCards from './experience-cards.tsx';
 import {ExperienceDetails} from '../../constants/experience';
 
 const Experience = () => {
   const [openTab, setOpenTab] = React.useState(1);
-
+  const mainTabContainer=useRef<null | HTMLDivElement>(null);
   return (
     <div>
         <h2 className='section-header text-3xl font-semibold'>Experience</h2>
@@ -29,6 +29,7 @@ const Experience = () => {
                 onClick={e => {
                   e.preventDefault();
                   setOpenTab(1);
+                  mainTabContainer?.current?.scrollTo(0,0)
                 }}
                 data-toggle="tab"
                 href="#link1"
@@ -45,6 +46,7 @@ const Experience = () => {
                 onClick={e => {
                   e.preventDefault();
                   setOpenTab(2);
+                  mainTabContainer?.current?.scrollTo(0,0)
                 }}
                 data-toggle="tab"
                 href="#link2"
@@ -61,6 +63,7 @@ const Experience = () => {
                 onClick={e => {
                   e.preventDefault();
                   setOpenTab(3);
+                  mainTabContainer?.current?.scrollTo(0,0)
                 }}
                 data-toggle="tab"
                 href="#link3"
@@ -73,7 +76,7 @@ const Experience = () => {
             </li>
               </a>
           </ul>
-          <div css={mainContainer} className="relative flex flex-col min-w-0 break-words w-full mb-6">
+          <div ref={mainTabContainer} css={mainContainer} className="relative flex flex-col min-w-0 break-words w-full mb-6">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">

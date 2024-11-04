@@ -11,7 +11,7 @@ padding:5px;
 `
 
 export const selectedTab=css`
-background-color:#D3D3D3;
+background-color: white;
 color:black;
 `
 
@@ -22,7 +22,7 @@ opacity:0.5;
 export const mainContainer=css`
 height:300px;
 overflow:scroll;
-border:1px solid white;
+border:1px solid #c5bec5;
 border-radius:5px;
 `
 export const experienceCardsContainer=css`
