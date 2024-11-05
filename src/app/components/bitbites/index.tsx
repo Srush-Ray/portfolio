@@ -4,7 +4,7 @@ import {sectionBox} from './styles.js';
 export default function BitsBites() {
   return (
     <div className='mb-5'>
-        <h2 className='section-header text-3xl font-semibold'>
+        <h2 className='section-header text-2xl md:text-3xl font-semibold'>
         Bites & Bytes
         </h2>
         <div css={sectionBox}>

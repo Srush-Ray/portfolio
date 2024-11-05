@@ -11,7 +11,7 @@ const professional: Details[] = [
         company: "Addepar",
         title: "Software Engineer 2",
         year: "July 2024 - Present",
-        qualities: ["JAVA", "Python", "AWS","React", "Javascript", "Typescript", "Leadership", "Mentor"],
+        qualities: ["Web Development","JAVA", "Python", "AWS","React", "Javascript", "Typescript", "Leadership", "Mentor"],
         description: "Fullstack developer in Javascript, ReactJs, Java and Python helping in building fintech products to extract data for easy investment-portfolio analysis and management.",
     }
     ,{

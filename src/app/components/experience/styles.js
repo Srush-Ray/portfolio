@@ -31,7 +31,7 @@ margin-bottom:20px;
 export const divInline=css`
 display:flex;
 flex-direction:row;
-width: 100%; 
+flex-wrap: wrap;
 `
 export const eachTag=css`
 flex:1,

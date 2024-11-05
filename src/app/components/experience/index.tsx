@@ -10,7 +10,7 @@ const Experience = () => {
   const mainTabContainer=useRef<null | HTMLDivElement>(null);
   return (
     <div>
-        <h2 className='section-header text-3xl font-semibold'>Experience</h2>
+        <h2 className='section-header md:text-3xl text-2xl font-semibold'>Experience</h2>
         <div className="flex flex-wrap">
         <div className="w-full">
           <ul

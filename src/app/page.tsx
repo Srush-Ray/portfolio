@@ -1,14 +1,13 @@
 /** @jsxImportSource @emotion/react */
 "use client"
-import Image from "next/image";
-import Header from "./components/header";
 import MainSection from "./components/main-section";
 import Experience from "./components/experience";
 import Tech from "./components/tech";
 import Academics from "./components/academics";
 import BitsBites from "./components/bitbites";
-import { useRef } from "react";
-import { stickyHeader } from "./components/header/styles";
+import { useEffect, useRef, useState } from "react";
+import { stickyHeader,header } from "./components/header/styles";
+import ContactDetails from "./components/contact";
 
 export default function Home() {
   const mainSection = useRef<null | HTMLDivElement>(null)
@@ -17,34 +16,53 @@ export default function Home() {
   const expSection = useRef<null | HTMLDivElement>(null)
   const acaSection = useRef<null | HTMLDivElement>(null)
   
-  const onClickScroll=(key:number)=>{
-    switch (key) {
-      case 1:
-        mainSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        break;
-        case 2:
-        expSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          break;
-          case 3:
-        techSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            break;
-            case 4:
-           bitesSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-              break;  
-              case 5:
-                acaSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                   break;    
-      default:
-        break;
-    }
+  // const onClickScroll=(key:number)=>{
+  //   switch (key) {
+  //     case 1:
+  //       mainSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //       break;
+  //       case 2:
+  //       expSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //         break;
+  //         case 3:
+  //       techSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //           break;
+  //           case 4:
+  //          bitesSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //             break;  
+  //             case 5:
+  //               acaSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //                  break;    
+  //     default:
+  //       break;
+  //   }
   
-  }
+  // }
+  const [isIntersecting, setIntersecting] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIntersecting(entry.isIntersecting);
+    });
+
+    const currentElement = mainSection.current;
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [mainSection]);
+
   return (
     <div>
-       <div className="" css={stickyHeader}>
+       {/* <div className="" css={stickyHeader}>
         <Header onClickScroll={onClickScroll}/>
-       </div>
-    <div className="container justify-self-center">
+       </div> */}
+      <div className="container justify-self-center px-5">
       <div ref={mainSection} className="my-20 grid-cols-6">
        <MainSection />
       </div>
@@ -61,6 +79,9 @@ export default function Home() {
       <Academics/>
       </div>
     </div>
+   {!isIntersecting && <div css={[stickyHeader,header]}>
+        <ContactDetails />
+        </div>}
     </div>
 
   );

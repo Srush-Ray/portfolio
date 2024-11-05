@@ -20,17 +20,17 @@ teams=[]
 }) => {
   return (
     <div className='container justify-center items-center text-left' css={eachSection}>
-        <div className='grid grid-cols-8'>
-        <div className='grid grid-cols-1'>
+        <div className='grid grid-cols-8 '>
+        <div className='grid grid-cols-1 justify-center items-center'>
          <Image
           src={logo}
           height={50}
           width={50}
           alt={name}
-          // css={imageStyle}
+          className='justify-center items-center pl-2'
          />
         </div>
-        <div className='pl-4 grid grid-cols-1 col-span-6'>
+        <div className='pl-4 grid grid-cols-1 col-span-7 break-all'>
           <p>{name}</p>
           <p>{degree} - {course}</p>
           <p>{year}</p>

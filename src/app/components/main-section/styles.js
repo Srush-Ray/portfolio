@@ -12,9 +12,3 @@ align-self: center;
 justify-self: center;
 font-family:'Times New Roman', Times, serif !important;
 `
-
-export const imageStyle=css`
-background-position: center center;
-background-size: center;
-margin: auto auto;
-`

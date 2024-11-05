@@ -10,23 +10,21 @@ const ExperienceCards = ({details=[]}:{
     <div className='container'>
       {details?.map((detail)=>{
         return <div key={detail.year} className='grid grid-cols-8' css={experienceCardsContainer}>
-        <div  className='grid grid-cols-1 text-right'>
+        <div  className='grid grid-cols-1 col-span-2 text-right'>
         <div className='text-lg'>{detail.year}</div>
         </div>
         <div className='grid grid-cols-1 col-span-6 text-left pl-5 pr-5'>
-        <div>
           <p className='text-lg font-bold'>{detail.company}</p>
           <p className='underline'>{detail.title}</p>
-          <div css={divInline} className='grid grid-cols-1'>
+          <div css={divInline} className='grid grid-cols-12'>
           {detail?.qualities?.map((item,index)=>{
-            return <div key={index} css={eachTag}>
+            return <div key={index} css={eachTag} >
               <p className='text-xs whitespace-nowrap'>{item}</p>
             </div>
           })}
           </div>
           <p>{detail.description}</p>
           </div>
-        </div>
         </div>
       })}
     
