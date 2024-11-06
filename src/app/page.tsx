@@ -8,6 +8,8 @@ import BitsBites from "./components/bitbites";
 import { useEffect, useRef, useState } from "react";
 import { stickyHeader,header } from "./components/header/styles";
 import ContactDetails from "./components/contact";
+import { initializeApp } from "firebase/app";
+import { getAnalytics,isSupported } from "firebase/analytics";
 
 export default function Home() {
   const mainSection = useRef<null | HTMLDivElement>(null)
@@ -56,6 +58,33 @@ export default function Home() {
       }
     };
   }, [mainSection]);
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
+  };
+console.log(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+isSupported().then((supported) => {
+  if (supported) {
+    const analytics = getAnalytics(app);
+    console.log("Firebase Analytics initialized");
+  } else {
+    console.log("Firebase Analytics is not supported in this environment.");
+  }
+}).catch((error) => {
+  console.error("Error checking analytics support:", error);
+});
 
   return (
     <div>
