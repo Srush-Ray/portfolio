@@ -9,21 +9,16 @@ import { useEffect, useRef, useState } from "react";
 import { stickyHeader,header } from "./components/header/styles";
 import ContactDetails from "./components/contact";
 import {initializeAnalytics, trackClick} from './firebase';
-import { GetServerSidePropsContext } from "next";
+import { useSearchParams } from "next/navigation";
 
-export default function Home(context:{
-  searchParams?:{
-    [key: string]:string
-  },
-  params?:{
-    [key: string]:string
-  }
-}) {
+export default function Home() {
   const mainSection = useRef<null | HTMLDivElement>(null)
   const techSection = useRef<null | HTMLDivElement>(null)
   const bitesSection = useRef<null | HTMLDivElement>(null)
   const expSection = useRef<null | HTMLDivElement>(null)
   const acaSection = useRef<null | HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const utmSource = searchParams.get('utm_source');
 
   // const onClickScroll=(key:number)=>{
   //   switch (key) {
@@ -69,7 +64,7 @@ export default function Home(context:{
     // Initialize Firebase Analytics when the component is mounted
     initializeAnalytics();
     trackClick('page-load',{
-      ...context.searchParams,...context.params
+      utm_source: utmSource||''
     })
   }, []);
 
@@ -96,7 +91,7 @@ export default function Home(context:{
       </div>
     </div>
    {!isIntersecting && <div css={[stickyHeader,header]}>
-        <ContactDetails details={{...context.searchParams,...context.params}} />
+        <ContactDetails details={{utm_source: utmSource||''}} />
         </div>}
     </div>
 
