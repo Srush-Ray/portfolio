@@ -8,16 +8,23 @@ import BitsBites from "./components/bitbites";
 import { useEffect, useRef, useState } from "react";
 import { stickyHeader,header } from "./components/header/styles";
 import ContactDetails from "./components/contact";
-import { initializeApp } from "firebase/app";
-import { getAnalytics,isSupported } from "firebase/analytics";
+import {initializeAnalytics, trackClick} from './firebase';
+import { GetServerSidePropsContext } from "next";
 
-export default function Home() {
+export default function Home(context:{
+  searchParams?:{
+    [key: string]:string
+  },
+  params?:{
+    [key: string]:string
+  }
+}) {
   const mainSection = useRef<null | HTMLDivElement>(null)
   const techSection = useRef<null | HTMLDivElement>(null)
   const bitesSection = useRef<null | HTMLDivElement>(null)
   const expSection = useRef<null | HTMLDivElement>(null)
   const acaSection = useRef<null | HTMLDivElement>(null)
-  
+
   // const onClickScroll=(key:number)=>{
   //   switch (key) {
   //     case 1:
@@ -58,33 +65,13 @@ export default function Home() {
       }
     };
   }, [mainSection]);
-
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: process.env.apiKey,
-    authDomain: process.env.authDomain,
-    projectId: process.env.projectId,
-    storageBucket: process.env.storageBucket,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.appId,
-    measurementId: process.env.measurementId
-  };
-console.log(firebaseConfig);
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-isSupported().then((supported) => {
-  if (supported) {
-    const analytics = getAnalytics(app);
-    console.log("Firebase Analytics initialized");
-  } else {
-    console.log("Firebase Analytics is not supported in this environment.");
-  }
-}).catch((error) => {
-  console.error("Error checking analytics support:", error);
-});
+  useEffect(() => {
+    // Initialize Firebase Analytics when the component is mounted
+    initializeAnalytics();
+    trackClick('page-load',{
+      ...context.searchParams,...context.params
+    })
+  }, []);
 
   return (
     <div>
@@ -109,7 +96,7 @@ isSupported().then((supported) => {
       </div>
     </div>
    {!isIntersecting && <div css={[stickyHeader,header]}>
-        <ContactDetails />
+        <ContactDetails details={{...context.searchParams,...context.params}} />
         </div>}
     </div>
 
