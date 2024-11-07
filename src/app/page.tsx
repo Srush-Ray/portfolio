@@ -5,7 +5,7 @@ import Experience from "./components/experience";
 import Tech from "./components/tech";
 import Academics from "./components/academics";
 import BitsBites from "./components/bitbites";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { stickyHeader,header } from "./components/header/styles";
 import ContactDetails from "./components/contact";
 import {initializeAnalytics, trackClick} from './firebase';
@@ -69,6 +69,7 @@ export default function Home() {
   }, []);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div>
        {/* <div className="" css={stickyHeader}>
         <Header onClickScroll={onClickScroll}/>
@@ -94,6 +95,6 @@ export default function Home() {
         <ContactDetails details={{utm_source: utmSource||''}} />
         </div>}
     </div>
-
+    </Suspense>
   );
 }
