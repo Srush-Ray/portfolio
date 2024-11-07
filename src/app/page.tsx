@@ -60,13 +60,17 @@ export default function Home() {
       }
     };
   }, [mainSection]);
+
   useEffect(() => {
     // Initialize Firebase Analytics when the component is mounted
     initializeAnalytics();
+  }, []);
+  useEffect(() => {
     trackClick('page-load',{
       utm_source: utmSource||''
     })
-  }, []);
+  }, [utmSource])
+  
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
