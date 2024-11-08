@@ -14,7 +14,7 @@ export default function BitsBites() {
           <p>🥇 ABDM Hackathon Winner - Issued by National Health Authority </p>
         </div>
         <div css={sectionBox}>
-          <p>📚 My Page-Turns: 
+          <p>📚 My Book-Bites, Pages & Perspectives: 
           </p> 
             <ul >
               <li>

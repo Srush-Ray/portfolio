@@ -22,7 +22,7 @@ export default function Tech() {
                height={50}
                className='inline-block items-center mb-4 mt-2 justify-center align-middle'
                />
-                <p className='justify-center items-center break-all'>{item.tech}</p>
+                <p className='text-xs justify-center items-center break-all'>{item.tech}</p>
               </div>
               
               </div>
