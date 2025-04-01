@@ -7,3 +7,8 @@ export const sectionBox=css`
  padding:5px;
  width: fit-content;
 `
+export const aTag=css`
+&:hover {
+        text-decoration: underline;
+}
+`

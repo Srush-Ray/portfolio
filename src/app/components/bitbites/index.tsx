@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 "use client"
-import {sectionBox} from './styles.js';
+import {sectionBox,aTag} from './styles.js';
 export default function BitsBites() {
   return (
     <div className='mb-5'>
@@ -18,15 +18,15 @@ export default function BitsBites() {
           </p> 
             <ul >
               <li>
-                <a target='_blank' href="https://www.instagram.com/stories_sum_up/">👓 Instagram: @stories_sum_up</a> 
+              👓 Instagram: <a css={aTag} target='_blank' href="https://www.instagram.com/stories_sum_up/">@stories_sum_up</a> 
               </li>
               <li>
-                <a target='_blank' href="https://stories-sum-up.medium.com/">👓 Blogs: @stories_sum_up </a>
+              👓 Blogs:  <a css={aTag} target='_blank' href="https://stories-sum-up.medium.com/">#stories-sum-up </a>
               </li>
             </ul>
         </div>
         <div css={sectionBox}>
-          <p>👩🏻‍💻 Learn redux at: <a target='_blank' href="https://www.youtube.com/watch?v=CJa4mjSzyIw">Redux Hands On</a>
+          <p>👩🏻‍💻 Learn redux at: <a css={aTag} target='_blank' href="https://www.youtube.com/watch?v=CJa4mjSzyIw">Redux Hands On</a>
           </p> 
         </div>        
     </div>
