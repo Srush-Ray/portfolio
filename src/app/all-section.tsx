@@ -7,9 +7,9 @@ import Tech from "./components/tech";
 import Academics from "./components/academics";
 import BitsBites from "./components/bitbites";
 import { useEffect, useRef, useState } from "react";
-import { stickyHeader,header } from "./components/header/styles";
+import { stickyHeader, header } from "./components/header/styles";
 import ContactDetails from "./components/contact";
-import {initializeAnalytics, trackClick} from './firebase';
+// import { initializeAnalytics, trackClick } from './firebase';
 import { useSearchParams } from "next/navigation";
 
 export default function AllSections() {
@@ -41,7 +41,7 @@ export default function AllSections() {
   //     default:
   //       break;
   //   }
-  
+
   // }
   const [isIntersecting, setIntersecting] = useState(false)
 
@@ -62,42 +62,42 @@ export default function AllSections() {
     };
   }, [mainSection]);
 
-  useEffect(() => {
-    // Initialize Firebase Analytics when the component is mounted
-    initializeAnalytics();
-  }, []);
-  useEffect(() => {
-    trackClick('page-load',{
-      utm_source: utmSource||''
-    })
-  }, [utmSource])
-  
+  // useEffect(() => {
+  //   // Initialize Firebase Analytics when the component is mounted
+  //   initializeAnalytics();
+  // }, []);
+  // useEffect(() => {
+  //   trackClick('page-load',{
+  //     utm_source: utmSource||''
+  //   })
+  // }, [utmSource])
+
 
   return (
     <div>
-       {/* <div className="" css={stickyHeader}>
+      {/* <div className="" css={stickyHeader}>
         <Header onClickScroll={onClickScroll}/>
        </div> */}
       <div className="container justify-self-center px-5">
-      <div ref={mainSection} className="my-20 grid-cols-6">
-       <MainSection />
+        <div ref={mainSection} className="my-20 grid-cols-6">
+          <MainSection />
+        </div>
+        <div ref={expSection}>
+          <Experience />
+        </div>
+        <div ref={techSection}>
+          <Tech />
+        </div>
+        <div ref={bitesSection}>
+          <BitsBites />
+        </div>
+        <div ref={acaSection}>
+          <Academics />
+        </div>
       </div>
-      <div ref={expSection}>
-      <Experience/>
-      </div>
-      <div ref={techSection}>
-      <Tech/>
-      </div>
-      <div ref={bitesSection}>
-      <BitsBites/>
-      </div>
-      <div ref={acaSection}>
-      <Academics/>
-      </div>
-    </div>
-   {!isIntersecting && <div css={[stickyHeader,header]}>
-        <ContactDetails details={{utm_source: utmSource||''}} />
-        </div>}
+      {!isIntersecting && <div css={[stickyHeader, header]}>
+        <ContactDetails details={{ utm_source: utmSource || '' }} />
+      </div>}
     </div>
   );
 }

@@ -5,34 +5,43 @@ import Image from 'next/image'
 import {imageStyle} from './styles';
 import { trackClick } from '@/app/firebase';
 
-const ContactDetails = ({details={}}:{
-  details?:{
-    [key: string]:string
-  }
+const ContactDetails = ({ details = {}, align = 'center' }: {
+  details?: {
+    [key: string]: string
+  },
+  align?: 'center' | 'left' | 'responsive'
 }) => {
+  const getJustifyClass = () => {
+    if (align === 'left') return 'justify-start';
+    if (align === 'responsive') return 'justify-center md:justify-start';
+    return 'justify-center';
+  };
+
   return (
-    <div className='grid lg:grid-cols-3 grid-cols-2 mt-5 justify-center items-center text-center'>
-      <div className='lg:col-start-2 lg:col-span-1 col-start-1 col-span-2 p-1'>
-         <div className="grid lg:grid-cols-6 grid-cols-6 items-center justify-cente">
-            {contactDetails.map((contact)=>{
-              return <a  
-              onClick={()=>trackClick('contact-link',{
-                contact: contact.title,
-                ...details
-              })}
-              title={contact.title}
-              key={contact.title} href={contact.url} target='_blank' className="grid-cols-1 items-center justify-center">
-                <Image
-                    src={contact.icon}
-                    height={35}
-                    width={35}
-                    alt={contact.title}
-                    css={imageStyle}
-                    />
-            </a>
+    <div className={`flex flex-wrap items-center gap-4 mt-4 ${getJustifyClass()}`}>
+      {contactDetails.map((contact) => {
+        return (
+          <a
+            onClick={() => trackClick('contact-link', {
+              contact: contact.title,
+              ...details
             })}
-      </div>
-            </div>
+            title={contact.title}
+            key={contact.title}
+            href={contact.url}
+            target='_blank'
+            className="transition-transform hover:scale-110 inline-block"
+          >
+            <Image
+              src={contact.icon}
+              height={35}
+              width={35}
+              alt={contact.title}
+              css={imageStyle}
+            />
+          </a>
+        )
+      })}
     </div>
   )
 }
