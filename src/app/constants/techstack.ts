@@ -10,12 +10,12 @@ export const techStack = [{
     image: images.typescript,
 },
 {
-    tech: 'Angular',
-    image: images.angular,
-},
-{
     tech: 'React/React Native',
     image: images.react,
+},
+{
+    tech: 'Angular',
+    image: images.angular,
 },
 {
     tech: 'NodeJs',
@@ -25,8 +25,12 @@ export const techStack = [{
     tech: 'Java',
     image: images.java,
 },
-// {
-//     tech: 'AWS',
-//     image: '',
-// },
+{
+    tech: 'Firebase',
+    image: images.firebase,
+},
+{
+    tech: 'AWS',
+    image: images.aws,
+},
 ]

@@ -11,23 +11,23 @@ const professional: Details[] = [
         company: "Addepar",
         title: "Software Engineer 2",
         year: "July 2024 - Present",
-        qualities: ["Web Development","JAVA", "Python", "AWS","React", "Javascript", "Typescript", "Leadership", "Mentor"],
-        description: "Fullstack developer in Javascript, ReactJs, Java and Python helping in building fintech products to extract data for easy investment-portfolio analysis and management.",
+        qualities: ["Web Development", "Java", "Python", "AWS", "React", "JavaScript", "TypeScript", "Agentic AI", "Databricks", "Leadership", "Mentor"],
+        description: "Fullstack engineer building high-impact fintech products for investment portfolio analysis and management. Developed new React UI applications and client onboarding features, while integrating AI Agents and data extraction capabilities for effective analytics and interactive dashboarding.",
+    },
+    {
+        company: "Bajaj Finserv Health Ltd",
+        title: "Software Development Engineer",
+        year: "August 2022 - September 2024",
+        qualities: ["Mobile and Web Development", "NodeJS / NestJS", "React / NextJS", "React Native", "JavaScript", "TypeScript", "Leadership", "Mentor"],
+        description: "Led a team of 4 junior developers and 2 interns across Healthtech and Insurtech initiatives, driving planning, technical solutions, and full-stack development with React, NestJS/NodeJS, and MySQL. Delivered critical web and mobile features under tight deadlines, streamlined user onboarding and catalogue management, and optimized system observability and performance with ELK logging.",
+    },
+    {
+        company: "Bajaj Finserv Health Ltd",
+        title: "Associate Software Development Engineer",
+        year: "August 2021 - September 2022",
+        qualities: ["React", "React Native", "JavaScript", "Technical Interviewing"],
+        description: "Contributed to core health-tech products expanding access to preventive and personalized healthcare. Built 3 end-to-end features—Lab Booking, Medicine Order, and RxUpload—across mobile and web platforms. Significantly reduced production bugs by improving test coverage and code quality standards, and assisted in hiring by interviewing candidates.",
     }
-    ,{
-    company: "Bajaj Finserv Health Ltd",
-    title: "Software Development Engineer",
-    year: "August 2022 - September 2024",
-    qualities: ["Mobile and Web Development","NodeJs/NestJs", "React/NextJs", "React Native", "Javascript", "Typescript", "Leadership", "Mentor", "Manager"],
-    description: "Led a team of 4 junior developers and 2 interns on Healthtech and Insurtech projects, handling planning, tech solutions, and full-stack development with ReactJs, NestJs/NodeJs, and MySQL. Implemented key features on web and app under tight deadlines, improved onboarding and catalogue management, and optimized performance by integrating ELK logging and tracking.",
-},
-{
-    company: "Bajaj Finserv Health Ltd",
-    title: "Associate Software Development Engineer",
-    year: "August 2021 - September 2022",
-    qualities: ["React", "React Native", "Javascript", "Interviews"],
-    description: "Help build health-tech products providing access to preventive, personalized & affordable healthcare access. Built 3 end-to-end user and business-centric features - Lab Booking, Medicine Order, and RxUpload on app and web. Improved documentation, test coverage and code quality to reduce production bugs significantly. Assisted in the hiring process by interviewing interns.",
-}
 ];
 
 const internship: Details[] = [
@@ -35,29 +35,30 @@ const internship: Details[] = [
         company: "Web Development Intern",
         title: "Upcloud Technology",
         year: "September 2020 - May 2021",
-        qualities: ["Team Management", "CSS", "HTML-HTML5", "Javascript", "ReactJs", "Leadership", "Mentor"],
-        description: "Fullstack developer in Javascript, ReactJs, Java and Python helping in building fintech products to extract data for easy investment-portfolio analysis and management.",
-    }
-    ,{
-    company: "Web Application Developer Intern",
-    title: "Bajaj Auto Ltd",
-    year: "January 2021 - February 2021",
-    qualities: ["MongoDB","NodeJs","Angular","Express.js","MEAN stack"],
-    description: "Internal HR organisational portal/tool. MEAN stack internal company portal to manage employee details, leaves, notices and other employee benefits.",
-},
-{
-    company: "Android Developer Intern",
-    title: "SoftEzi Solutions LLP",
-    year: "June 2020 - July 2020",
-    qualities: ["Android Development", "Android Design"],
-    description: "Digital Solutions in form of android applications",
-},{
-    company: "Android Application Developer Intern",
-    title: "Homedroid Technologies",
-    year: "January 2020 - March 2020",
-    qualities: ["Android","Android Development","Angular","Express.js","MEAN stack"],
-    description: "Developed Android application for automation solution for low-cost high-end home security systems.",
-},
+        qualities: ["Team Management", "CSS", "HTML5", "JavaScript", "ReactJS", "Leadership"],
+        description: "Developed and maintained web applications using JavaScript, ReactJS, HTML5, and CSS. Collaborated with design and dev teams to construct responsive UI components and enhance user experience.",
+    },
+    {
+        company: "Web Application Developer Intern",
+        title: "Bajaj Auto Ltd",
+        year: "January 2021 - February 2021",
+        qualities: ["MongoDB", "NodeJS", "Angular", "Express.js", "MEAN Stack"],
+        description: "Built an internal HR portal on the MEAN stack to streamline management of employee details, leave applications, notices, and company benefits.",
+    },
+    {
+        company: "Android Developer Intern",
+        title: "SoftEzi Solutions LLP",
+        year: "June 2020 - July 2020",
+        qualities: ["Android Development", "Mobile UI Design"],
+        description: "Developed digital solutions and responsive Android application features focused on seamless user experience.",
+    },
+    {
+        company: "Android Application Developer Intern",
+        title: "Homedroid Technologies",
+        year: "January 2020 - March 2020",
+        qualities: ["Android", "Android Development", "Angular", "Express.js", "MEAN Stack"],
+        description: "Engineered an Android application for automated home security solutions, integrating low-cost hardware with smart mobile controls.",
+    },
 ];
 
 const freelance: Details[] = [

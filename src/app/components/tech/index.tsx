@@ -10,29 +10,28 @@ export default function Tech() {
         <h2 className='section-header text-2xl md:text-3xl font-semibold'>Tech</h2>
         <div className='container'>
         <div className='grid grid-cols-1 justify-center items-center text-center'>
-         <div className="" css={divInline}>
-         {
-          techStack?.map((item)=>{
-            return <div key={item.tech} css={eachTag} className='text-wrap'>
-              <div className='justify-center items-center '>
-               <Image
-               src={item.image}
-               alt={item.tech}
-               width={50}
-               height={50}
-               className='inline-block items-center mb-4 mt-2 justify-center align-middle'
-               />
-                <p className='text-xs justify-center items-center break-all'>{item.tech}</p>
-              </div>
-              
-              </div>
-          })
-        }
-      </div>
+          <div className="" css={divInline}>
+            {
+              techStack?.map((item) => {
+                return (
+                  <div key={item.tech} css={eachTag} className='text-wrap'>
+                    <div className='flex-1 flex items-center justify-center w-full my-1'>
+                      <Image
+                        src={item.image}
+                        alt={item.tech}
+                        width={48}
+                        height={48}
+                        className='object-contain max-h-12 w-auto'
+                      />
+                    </div>
+                    <p className='text-sm text-center break-words mt-auto pt-1 font-medium'>{item.tech}</p>
+                  </div>
+                )
+              })
+            }
+          </div>
     </div>
         </div>
     </div>
   )
 }
-
-

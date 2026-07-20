@@ -12,8 +12,10 @@ import typescript from '../../../public/images/techstack/typescript.svg'
 import angular from '../../../public/images/techstack/angular.png'
 import node from '../../../public/images/techstack/node.png'
 import java from '../../../public/images/techstack/java.png'
+import aws from '../../../public/images/techstack/aws.png'
+import firebase from '../../../public/images/techstack/firebase.png'
 
-export const images={
+export const images = {
     linkedin,
     github,
     medium,
@@ -27,5 +29,7 @@ export const images={
     angular,
     java,
     node,
-    mic
+    mic,
+    aws,
+    firebase
 }
