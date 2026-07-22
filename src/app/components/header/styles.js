@@ -1,20 +1,32 @@
 import { css } from "@emotion/react";
 
-export const links=css`
- cursor:pointer;
-font-size:18px;
- &:hover {
-        text-decoration: underline;
+export const links = css`
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  &:hover {
+    color: var(--text-accent);
   }
-`
-export const stickyHeader=css`
-position: sticky;
-z-index: 100000;
-bottom: 0;
-box-shadow: 20px 10px 10px 10px rgb(1 1 1 / 0.9);
-`
+`;
 
-export const header=css`
-background-color: #454444;
-color: black;
-`
+export const stickyHeader = css`
+  position: sticky;
+  z-index: 100000;
+  bottom: 24px;
+  width: fit-content;
+  margin: 0 auto 24px auto;
+`;
+
+export const header = css`
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--header-border);
+  border-radius: 9999px;
+  box-shadow: var(--header-shadow);
+  padding: 10px 24px;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+`;
+

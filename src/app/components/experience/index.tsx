@@ -7,87 +7,64 @@ import {ExperienceDetails} from '../../constants/experience';
 
 const Experience = () => {
   const [openTab, setOpenTab] = React.useState(1);
-  const mainTabContainer=useRef<null | HTMLDivElement>(null);
+  const mainTabContainer = useRef<null | HTMLDivElement>(null);
+  
   return (
-    <div>
-        <h2 className='section-header md:text-3xl text-2xl font-semibold'>Experience</h2>
-        <div className="flex flex-wrap">
+    <div className='mb-[32px]'>
+      <div className="flex items-center gap-[12px] mb-[24px]">
+        <span className="h-[32px] w-[4px] bg-gradient-to-b from-purple-500 to-indigo-500 rounded-[9999px]"></span>
+        <h2 className='text-[24px] md:text-[30px] font-bold tracking-tight text-[var(--text-primary)]'>
+          Work Experience
+        </h2>
+      </div>
+
+      <div className="flex flex-wrap">
         <div className="w-full">
-          <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
-            role="tablist"
-          >
-            
-              <a
-              className="-mb-px mr-2 last:mr-0 flex-auto text-center"
-                // className={
-                //   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
-                //   (openTab === 1
-                //     ? "text-white bg-blueGray-600"
-                //     : "text-blueGray-600 bg-white")
-                // }
-                onClick={e => {
-                  e.preventDefault();
-                  setOpenTab(1);
-                  mainTabContainer?.current?.scrollTo(0,0)
-                }}
-                data-toggle="tab"
-                href="#link1"
-                role="tablist"
-              >
-                <li 
-            css={[eachTab,openTab===1?selectedTab:notSelectedTab]}
+          {/* Segmented Tab Controls */}
+          <div className="flex flex-wrap gap-[8px] mb-[24px] p-[6px] rounded-[9999px] bg-[var(--card-bg)] border border-[var(--card-border)] backdrop-blur-md w-fit shadow-sm">
+            <button
+              onClick={e => {
+                e.preventDefault();
+                setOpenTab(1);
+                mainTabContainer?.current?.scrollTo(0, 0);
+              }}
+              css={[eachTab, openTab === 1 ? selectedTab : notSelectedTab]}
             >
-                Professional
-            </li>
-              </a>
-              <a
-              className="-mb-px mr-2 last:mr-0 flex-auto text-center"
-                onClick={e => {
-                  e.preventDefault();
-                  setOpenTab(2);
-                  mainTabContainer?.current?.scrollTo(0,0)
-                }}
-                data-toggle="tab"
-                href="#link2"
-                role="tablist"
-              >
-                  <li 
-                  css={[eachTab,openTab===2?selectedTab:notSelectedTab]}
-                  >
-                Internship
-            </li>
-              </a>
-              <a
-              className="-mb-px mr-2 last:mr-0 flex-auto text-center"
-                onClick={e => {
-                  e.preventDefault();
-                  setOpenTab(3);
-                  mainTabContainer?.current?.scrollTo(0,0)
-                }}
-                data-toggle="tab"
-                href="#link3"
-                role="tablist"
-              >
-                  <li 
-                  css={[eachTab,openTab===3?selectedTab:notSelectedTab]}
-                  >
-                Freelance
-            </li>
-              </a>
-          </ul>
-          <div ref={mainTabContainer} css={mainContainer} className="relative flex flex-col min-w-0 break-words w-full mb-6">
-            <div className="px-4 py-5 flex-auto">
-              <div className="tab-content tab-space">
-                <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                <ExperienceCards details={ExperienceDetails.professional}/>
-                </div>
-                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                <ExperienceCards details={ExperienceDetails.internship}/>
-                </div>
-                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                <ExperienceCards details={ExperienceDetails.freelance}/>
-                </div>
+              Professional
+            </button>
+            <button
+              onClick={e => {
+                e.preventDefault();
+                setOpenTab(2);
+                mainTabContainer?.current?.scrollTo(0, 0);
+              }}
+              css={[eachTab, openTab === 2 ? selectedTab : notSelectedTab]}
+            >
+              Internship
+            </button>
+            <button
+              onClick={e => {
+                e.preventDefault();
+                setOpenTab(3);
+                mainTabContainer?.current?.scrollTo(0, 0);
+              }}
+              css={[eachTab, openTab === 3 ? selectedTab : notSelectedTab]}
+            >
+              Freelance
+            </button>
+          </div>
+
+          {/* Cards Glass Container */}
+          <div ref={mainTabContainer} css={mainContainer} className="relative flex flex-col min-w-0 break-words w-full">
+            <div className="tab-content">
+              <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+                <ExperienceCards details={ExperienceDetails.professional} />
+              </div>
+              <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                <ExperienceCards details={ExperienceDetails.internship} />
+              </div>
+              <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                <ExperienceCards details={ExperienceDetails.freelance} />
               </div>
             </div>
           </div>
@@ -96,5 +73,6 @@ const Experience = () => {
     </div>
   )
 }
+
 
 export default Experience

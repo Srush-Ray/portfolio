@@ -9,7 +9,7 @@ import BitsBites from "./components/bitbites";
 import { useEffect, useRef, useState } from "react";
 import { stickyHeader, header } from "./components/header/styles";
 import ContactDetails from "./components/contact";
-// import { initializeAnalytics, trackClick } from './firebase';
+import ThemeToggle from "./components/theme-toggle";
 import { useSearchParams } from "next/navigation";
 
 export default function AllSections() {
@@ -21,28 +21,6 @@ export default function AllSections() {
   const searchParams = useSearchParams();
   const utmSource = searchParams.get('utm_source');
 
-  // const onClickScroll=(key:number)=>{
-  //   switch (key) {
-  //     case 1:
-  //       mainSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  //       break;
-  //       case 2:
-  //       expSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  //         break;
-  //         case 3:
-  //       techSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  //           break;
-  //           case 4:
-  //          bitesSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  //             break;  
-  //             case 5:
-  //               acaSection?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  //                  break;    
-  //     default:
-  //       break;
-  //   }
-
-  // }
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
@@ -62,24 +40,17 @@ export default function AllSections() {
     };
   }, [mainSection]);
 
-  // useEffect(() => {
-  //   // Initialize Firebase Analytics when the component is mounted
-  //   initializeAnalytics();
-  // }, []);
-  // useEffect(() => {
-  //   trackClick('page-load',{
-  //     utm_source: utmSource||''
-  //   })
-  // }, [utmSource])
-
-
   return (
-    <div>
-      {/* <div className="" css={stickyHeader}>
-        <Header onClickScroll={onClickScroll}/>
-       </div> */}
-      <div className="container justify-self-center px-5">
-        <div ref={mainSection} className="my-20 grid-cols-6">
+    <div className="min-h-screen relative">
+      {/* Theme toggle hidden for now */}
+      {/* <div className="fixed top-5 right-5 z-[100001]">
+        <ThemeToggle />
+      </div> */}
+
+
+      <div className="max-w-[1152px] mx-auto px-[16px] sm:px-[24px] lg:px-[32px] py-[32px] space-y-[80px]">
+
+        <div ref={mainSection}>
           <MainSection />
         </div>
         <div ref={expSection}>
@@ -95,9 +66,11 @@ export default function AllSections() {
           <Academics />
         </div>
       </div>
-      {!isIntersecting && <div css={[stickyHeader, header]}>
-        <ContactDetails details={{ utm_source: utmSource || '' }} />
-      </div>}
+      {!isIntersecting && (
+        <div css={[stickyHeader, header]}>
+          <ContactDetails details={{ utm_source: utmSource || '' }} />
+        </div>
+      )}
     </div>
   );
 }

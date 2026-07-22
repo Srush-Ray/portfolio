@@ -13,10 +13,10 @@ export const techStack = [{
     tech: 'React/React Native',
     image: images.react,
 },
-{
-    tech: 'Angular',
-    image: images.angular,
-},
+// {
+//     tech: 'Angular',
+//     image: images.angular,
+// },
 {
     tech: 'NodeJs',
     image: images.node,
