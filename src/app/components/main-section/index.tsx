@@ -11,12 +11,6 @@ export default function MainSection() {
         {/* Left Side: Name, Titles & Personal Intro */}
         <div className='flex flex-col items-center md:items-start text-center md:text-left flex-1'>
 
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-[8px] px-[14px] py-[6px] rounded-[9999px] bg-[var(--badge-bg)] border border-[var(--badge-border)] text-[var(--badge-text)] text-[12px] font-semibold backdrop-blur-md">
-            <span className="w-[8px] h-[8px] rounded-[9999px] bg-emerald-400 animate-pulse"></span>
-            Google Developer Expert — Firebase
-          </div>
-
           {/* Greeting & Name */}
           <div>
             <h1 className='text-[36px] md:text-[60px] font-extrabold tracking-tight gradient-text my-[8px]' css={headerStyles}>
@@ -25,7 +19,7 @@ export default function MainSection() {
           </div>
 
           <h2 className='text-[18px] md:text-[24px] font-semibold gradient-text-accent mb-[12px]' css={headerStyles}>
-            Software Engineer & Fullstack Developer
+            Software Engineer
           </h2>
 
           {/* Warm Personal Bio */}
