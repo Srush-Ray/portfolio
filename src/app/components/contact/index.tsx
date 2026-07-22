@@ -18,7 +18,8 @@ const ContactDetails = ({ details = {}, align = 'center' }: {
   };
 
   return (
-    <div className={`flex flex-wrap items-center gap-4 mt-4 ${getJustifyClass()}`}>
+    <div className={`flex flex-wrap items-center gap-[16px] mt-[16px] ${getJustifyClass()}`}>
+
       {contactDetails.map((contact) => {
         return (
           <a
@@ -30,7 +31,8 @@ const ContactDetails = ({ details = {}, align = 'center' }: {
             key={contact.title}
             href={contact.url}
             target='_blank'
-            className="transition-transform hover:scale-110 inline-block"
+            className="transition-transform hover:scale-110 inline-flex items-center justify-center"
+
           >
             <Image
               src={contact.icon}

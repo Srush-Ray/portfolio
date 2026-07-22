@@ -3,31 +3,127 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --bg-primary: #090d16;
+  --bg-radial-1: rgba(147, 51, 234, 0.12);
+  --bg-radial-2: rgba(59, 130, 246, 0.12);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-accent: #c084fc;
+  
+  --card-bg: rgba(255, 255, 255, 0.035);
+  --card-bg-hover: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(255, 255, 255, 0.09);
+  --card-border-hover: rgba(168, 85, 247, 0.4);
+  
+  --header-bg: rgba(15, 17, 28, 0.85);
+  --header-border: rgba(255, 255, 255, 0.14);
+  --header-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  
+  --badge-bg: rgba(168, 85, 247, 0.12);
+  --badge-border: rgba(168, 85, 247, 0.25);
+  --badge-text: #e9d5ff;
+
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-glow: 0 0 25px rgba(168, 85, 247, 0.2);
+  
+  --scrollbar-track: #090d16;
+  --scrollbar-thumb: #27272a;
+  --scrollbar-thumb-hover: #3f3f46;
+
+  --gradient-title: linear-gradient(135deg, #ffffff 0%, #f3e8ff 50%, #d8b4fe 100%);
+  --gradient-subtitle: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #818cf8 100%);
+  --gradient-section-bar: linear-gradient(to bottom, #a855f7, #6366f1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-radial-1: rgba(168, 85, 247, 0.08);
+  --bg-radial-2: rgba(99, 102, 241, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-accent: #7c3aed;
+  
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(203, 213, 225, 0.7);
+  --card-border-hover: rgba(124, 58, 237, 0.45);
+  
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --header-border: rgba(203, 213, 225, 0.8);
+  --header-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.12);
+  
+  --badge-bg: rgba(124, 58, 237, 0.08);
+  --badge-border: rgba(124, 58, 237, 0.2);
+  --badge-text: #6d28d9;
+
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  --shadow-glow: 0 0 25px rgba(124, 58, 237, 0.15);
+  
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+
+  --gradient-title: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4c1d95 100%);
+  --gradient-subtitle: linear-gradient(135deg, #6d28d9 0%, #4f46e5 50%, #0284c7 100%);
+  --gradient-section-bar: linear-gradient(to bottom, #7c3aed, #4f46e5);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 15% 15%, var(--bg-radial-1) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, var(--bg-radial-2) 0%, transparent 45%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .gradient-text {
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-text-accent {
+    background: var(--gradient-subtitle);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-card);
+  }
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card-hover:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--card-border-hover);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
   }
 }
