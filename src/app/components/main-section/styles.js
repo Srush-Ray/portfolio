@@ -13,24 +13,24 @@ export const para = css`
 `;
 
 export const imageStyle = css`
-  width: 200px;
-  height: 200px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  width: 240px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
   object-fit: cover;
-  object-position: top center;
-  box-shadow: var(--shadow-glow);
+  object-position: center;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
   flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 35px var(--card-border-hover);
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--card-border-hover);
+    box-shadow: var(--shadow-glow);
   }
 
   @media (min-width: 768px) {
-    width: 260px;
-    height: 260px;
-    border-radius: 16px;
+    width: 280px;
   }
 `;

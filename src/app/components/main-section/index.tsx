@@ -44,6 +44,8 @@ export default function MainSection() {
           </div>
 
 
+
+
           {/* Contact Icons */}
           <div className='w-full mt-[8px] flex justify-center md:justify-start'>
             <ContactDetails align="responsive" />
@@ -53,14 +55,15 @@ export default function MainSection() {
         {/* Right Side: Profile Image */}
         <div className='flex justify-center items-center flex-shrink-0'>
           <Image
-            src="/images/photos/my-photo.png"
-            width={260}
-            height={260}
-            alt="Srushti Raybhoge"
+            src="/images/photos/GDE Profile.png"
+            width={280}
+            height={373}
+            alt="Srushti Raybhoge — Google Developer Expert"
             css={imageStyle}
             priority
           />
         </div>
+
       </div>
     </div>
   )

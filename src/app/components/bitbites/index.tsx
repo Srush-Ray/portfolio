@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 "use client"
 import { sectionBox, aTag } from './styles.js';
+import Image from 'next/image';
+
 export default function BitsBites() {
   return (
     <div className='mb-[32px]'>
@@ -19,10 +21,20 @@ export default function BitsBites() {
               <span>🎖️</span> Honors & Achievements
             </h3>
             <ul className='space-y-[12px] text-[14px] text-[var(--text-secondary)]'>
-              <li className='flex items-center gap-[8px]'>
-                <span className='w-[6px] h-[6px] rounded-[9999px] bg-[var(--text-accent)] flex-shrink-0'></span>
-                Google Developer Expert in Firebase
+              <li className='flex items-center gap-[10px] font-semibold text-[var(--text-primary)]'>
+                <Image
+                  src="/images/photos/GDE2026_AnimatedStickers_Generic.gif"
+                  alt="GDE Badge"
+                  width={28}
+                  height={28}
+                  className="object-contain w-[28px] h-[28px] flex-shrink-0"
+                  unoptimized
+                />
+
+                <span>Google Developer Expert in Firebase</span>
               </li>
+
+
               <li className='flex items-center gap-[8px]'>
                 <span className='w-[6px] h-[6px] rounded-[9999px] bg-[var(--text-accent)] flex-shrink-0'></span>
                 Top LinkedIn Voice in Software Development
